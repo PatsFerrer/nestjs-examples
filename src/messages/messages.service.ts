@@ -2,13 +2,7 @@ import { MessagesRepository } from "./messages.repository";
 
 export class MessagesServices {
 
-  //instancia do repositorio
-  messagesRepo: MessagesRepository;
-
-  constructor() {
-    // NÃO FAZER ISSO EM APPS REAIS
-    this.messagesRepo = new MessagesRepository();
-  }
+  constructor(public messagesRepo: MessagesRepository) {}
 
   findOne(id: string) {
     return this.messagesRepo.findOne(id);
